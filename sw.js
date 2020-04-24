@@ -42,11 +42,11 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "b1c2ea0fbdec84f1292c96f1b60c9dc9"
+    "revision": "887ede1cda4e82c594c0877124776b8e"
   },
   {
     "url": "404/index.html",
-    "revision": "3df032f82fee7be88af18d03dc20f10b"
+    "revision": "393ce13c5c4a0ed48501e3d6685cfad7"
   },
   {
     "url": "95b64a6e-7df4b477ec432349209d.js"
@@ -63,6 +63,13 @@ self.__precacheManifest = [
     "revision": "baa4f882e636227812aa4bc3337380ef"
   },
   {
+    "url": "app-924a3c038cc23ebddae6.js"
+  },
+  {
+    "url": "app-924a3c038cc23ebddae6.js.map",
+    "revision": "be0ab4eb0cd551bb4017ba56e451d7b5"
+  },
+  {
     "url": "app-ec5c54057c83de9b60eb.js"
   },
   {
@@ -71,7 +78,7 @@ self.__precacheManifest = [
   },
   {
     "url": "chunk-map.json",
-    "revision": "6a643a19d8ef223bce6afcb117c15c79"
+    "revision": "6a39744eb31ebeb58d9bb927e4646faa"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-18b9bd78e89bbe4752a5.js"
@@ -93,6 +100,13 @@ self.__precacheManifest = [
   {
     "url": "component---src-pages-index-js-34dd0ff7393825a967c4.js.map",
     "revision": "290330ff6e6107b6b6b6ff29f68d4ef1"
+  },
+  {
+    "url": "component---src-pages-index-js-6a32ac77c69c0fa23ae3.js"
+  },
+  {
+    "url": "component---src-pages-index-js-6a32ac77c69c0fa23ae3.js.map",
+    "revision": "c6bbcd7fb4c23cfeb024ac9237c3c0c4"
   },
   {
     "url": "component---src-pages-index-js-fcf8027589fbaa734401.js"
@@ -149,15 +163,15 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "0b37db96f64d8f1eae9cd7d572c40c10"
+    "revision": "2ce7f601fcea924e1fcb0c396cc43727"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "710ca6d012054da53ae5d27f11226fb6"
+    "revision": "34926678fb6f61bf967e0e72ca317bcc"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "e3d6284572ee136f6311b17cc4f7b183"
+    "revision": "c5e5a3412dec8fe76c611e91c4742239"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -169,7 +183,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "d8572b508a1b8ba1673846e7e2f7661a"
+    "revision": "59b8b2f290ee46edac5bee91e9a5e3d4"
   },
   {
     "url": "page-data/index/page-data.json",
@@ -231,8 +245,15 @@ self.__precacheManifest = [
     "revision": "12ed6c499affa2d133dede1880a1b785"
   },
   {
+    "url": "webpack-runtime-9953838fd5573152962c.js"
+  },
+  {
+    "url": "webpack-runtime-9953838fd5573152962c.js.map",
+    "revision": "b6e8efa86d404471699d9b535a44edd7"
+  },
+  {
     "url": "webpack.stats.json",
-    "revision": "37b558d56323da1803143fe0672b18cf"
+    "revision": "cff928891dac5c54842e9f47da1ae2d3"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -320,12 +341,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/protfolio`), ``)
+  pathname = pathname.replace(new RegExp(`^/portfolio`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/protfolio/app-164abaa8eac8740e052e.js`))) {
+  if (!resources || !(await caches.match(`/portfolio/app-924a3c038cc23ebddae6.js`))) {
     return await fetch(event.request)
   }
 
@@ -338,7 +359,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/protfolio/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/portfolio/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
