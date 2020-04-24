@@ -1,0 +1,62 @@
+[
+    {
+        "image": "../images/projects/ciyot.png",
+        "title": "Ciyot at Harmony Group",
+        "description": "",
+        "tags": [
+            "vuejs",
+            "vuex",
+            "casandra",
+            "mysql",
+            "nodejs",
+            "real time analytics"
+        ],
+        "website": "https://app.harmony-iot.app/"
+    },
+    {
+        "image": "../images/projects/lnrd.png",
+        "title": "Lnrd at StoreMaven",
+        "description": "",
+        "tags": [
+            "nextjs",
+            "react",
+            "redux",
+            "ssr",
+            "nodejs",
+            "styled components"
+        ],
+        "website": "https://jobs.storemaven.com/"
+    },
+    {
+        "image": "../images/projects/ffm-player.png",
+        "title": "Feature.Fm",
+        "description": "",
+        "tags": [
+            "vuejs",
+            "nodejs",
+            "mongodb",
+            "redis",
+            "musicplayer",
+            "real-time analytics",
+            "3rd party integrations"
+        ],
+        "website": "test.ffm.to/ejwojka-advanced",
+        "github": ""
+    },
+    {
+        "image": "../images/projects/fxempire.png",
+        "title": "FXEmpire",
+        "description": "",
+        "tags": [
+            "react",
+            "redux",
+            "ssr",
+            "deep google integrations for seo",
+            "seo",
+            "mongodb",
+            "redis",
+            "styled components"
+        ],
+        "website": "https://www.fxempire.com/"
+    }
+]

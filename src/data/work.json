@@ -1,0 +1,42 @@
+[
+  {
+    "icon": "../images/work/grover.png",
+    "title": "Freelancer Full Stack Wen Developer",
+    "subtitle": "",
+    "period": "2019 - Now",
+    "location": "Tel-Aviv, Israel",
+    "specialization": "React, Vuejs, Styled-Components, Atomic Design, Redux, Nodejs, Redis, MongoDb, Angular, Real-Time Analytics and more..."
+  },
+  {
+    "icon": "../images/work/featurefm.png",
+    "title": "Full Stack Wen Developer at FeatureFM",
+    "subtitle": "",
+    "period": "2018 - 2019",
+    "location": "Tel-Aviv, Israel",
+    "specialization": "Vuejs, Riot, React, Redux, Nodejs, Redis, MongoDb, Angular,  Real-Time Analytics and more..."
+  },
+  {
+    "icon": "../images/work/fxempirenew.png",
+    "title": "Full Stack Wen Developer at FXEmpire",
+    "subtitle": "",
+    "period": "2016 - 2017",
+    "location": "Tel-Aviv, Israel",
+    "specialization": "React, Redux, Styled-Components, Atomic Design, Nodejs, Redis, MongoDb, Angular, Deep SEO integrations and best practices and more..."
+  },
+  {
+    "icon": "../images/work/featurefm.png",
+    "title": "Full Stack Wen Developer at FeatureFM",
+    "subtitle": "",
+    "period": "2014 - 2016",
+    "location": "Tel-Aviv, Israel",
+      "specialization": "Riot, React, Redux, Nodejs, Redis, MongoDb, Angular, Real-Time Analytics and more..."
+  },
+  {
+    "icon": "../images/work/equala.png",
+    "title": "Full Stack Developer at EQuala.Fm",
+    "subtitle": "",
+    "period": "2011 - 2013",
+    "location": "Tel-Aviv, Israel",
+    "specialization": "Android, Nodejs, Redis, MongoDb and more..."
+  }
+]

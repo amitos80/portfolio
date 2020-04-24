@@ -1,0 +1,17 @@
+[
+  {
+    "language": "English",
+    "text": "Professional level",
+    "translation": "Hello World"
+  },
+  {
+    "language": "Hebrew",
+    "text": "Mother Tongue",
+    "translation": "שלום עולם"
+  },
+  {
+    "language": "Javascript",
+    "text": "Professional level",
+    "translation": "console.log('Hello World')"
+  }
+]
