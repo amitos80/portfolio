@@ -42,11 +42,11 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "887ede1cda4e82c594c0877124776b8e"
+    "revision": "04b67ff5dee9ef3b520189c7e4298986"
   },
   {
     "url": "404/index.html",
-    "revision": "393ce13c5c4a0ed48501e3d6685cfad7"
+    "revision": "a31df208745139460d5ac3a39e515444"
   },
   {
     "url": "95b64a6e-7df4b477ec432349209d.js"
@@ -56,22 +56,15 @@ self.__precacheManifest = [
     "revision": "d6c63b2ca14736c51bb6d230c2300200"
   },
   {
-    "url": "app-164abaa8eac8740e052e.js"
+    "url": "app-2af54f932c4d8cd3f566.js"
   },
   {
-    "url": "app-164abaa8eac8740e052e.js.map",
-    "revision": "baa4f882e636227812aa4bc3337380ef"
-  },
-  {
-    "url": "app-924a3c038cc23ebddae6.js"
-  },
-  {
-    "url": "app-924a3c038cc23ebddae6.js.map",
-    "revision": "be0ab4eb0cd551bb4017ba56e451d7b5"
+    "url": "app-2af54f932c4d8cd3f566.js.map",
+    "revision": "86cce26c5fde14479aad4a219612b95b"
   },
   {
     "url": "chunk-map.json",
-    "revision": "6a39744eb31ebeb58d9bb927e4646faa"
+    "revision": "005f649bf22e1c90528b859f720c0568"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-18b9bd78e89bbe4752a5.js"
@@ -88,18 +81,11 @@ self.__precacheManifest = [
     "revision": "f3c2f59e70f621e379afc2ba8eb4fea1"
   },
   {
-    "url": "component---src-pages-index-js-6a32ac77c69c0fa23ae3.js"
+    "url": "component---src-pages-index-js-a7abf4fa8b81e520460c.js"
   },
   {
-    "url": "component---src-pages-index-js-6a32ac77c69c0fa23ae3.js.map",
-    "revision": "c6bbcd7fb4c23cfeb024ac9237c3c0c4"
-  },
-  {
-    "url": "component---src-pages-index-js-fcf8027589fbaa734401.js"
-  },
-  {
-    "url": "component---src-pages-index-js-fcf8027589fbaa734401.js.map",
-    "revision": "2cc04a4c1b9214fffbdbe694f0403aa3"
+    "url": "component---src-pages-index-js-a7abf4fa8b81e520460c.js.map",
+    "revision": "26e0a40eaa558a44251570b8edc20e27"
   },
   {
     "url": "favicon-32x32.png",
@@ -149,15 +135,15 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "2c7097c36a813c5745dc31b3e06da0b9"
+    "revision": "35ffacbb92b2a01c116a1efded66a653"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "34926678fb6f61bf967e0e72ca317bcc"
+    "revision": "ad4a90d1e281bc702eb29a6f046491e3"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "c5e5a3412dec8fe76c611e91c4742239"
+    "revision": "333fbb85daba17f93c774be68a81a1d2"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -169,11 +155,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "59b8b2f290ee46edac5bee91e9a5e3d4"
-  },
-  {
-    "url": "page-data/dev-404-page/page-data.json",
-    "revision": "ab935f94fe76bebdaa856ee7a3b135f1"
+    "revision": "307650b176fb3e9a16dd335557982c5e"
   },
   {
     "url": "page-data/index/page-data.json",
@@ -599,22 +581,15 @@ self.__precacheManifest = [
     "url": "styles.28c8650698d995b47809.css"
   },
   {
-    "url": "webpack-runtime-5f9276bb9f53f80b5a8f.js"
+    "url": "webpack-runtime-53a4b53cafaa0d346027.js"
   },
   {
-    "url": "webpack-runtime-5f9276bb9f53f80b5a8f.js.map",
-    "revision": "4b91cbba77b13ca56d3374a6de334202"
-  },
-  {
-    "url": "webpack-runtime-9953838fd5573152962c.js"
-  },
-  {
-    "url": "webpack-runtime-9953838fd5573152962c.js.map",
-    "revision": "b6e8efa86d404471699d9b535a44edd7"
+    "url": "webpack-runtime-53a4b53cafaa0d346027.js.map",
+    "revision": "b7df51426234d08e085930376fd91e61"
   },
   {
     "url": "webpack.stats.json",
-    "revision": "cff928891dac5c54842e9f47da1ae2d3"
+    "revision": "68027ac0b483e58bcec1519c09bac093"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -702,12 +677,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/portfolio`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/portfolio/app-924a3c038cc23ebddae6.js`))) {
+  if (!resources || !(await caches.match(`/app-2af54f932c4d8cd3f566.js`))) {
     return await fetch(event.request)
   }
 
@@ -720,7 +695,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/portfolio/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
