@@ -5,7 +5,6 @@ const tailwindConfig = require("./tailwind.config.js");
 const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
-  pathPrefix: "/portfolio",
   siteMetadata: {
     title: `Amit Friedberg's Resume on the Web`,
     description: `Freelancer Full Stack Web Developer`,
@@ -19,7 +18,6 @@ module.exports = {
       options: {
         name: `Amit Friedberg's Resume on the Web`,
         short_name: `Resume on the Web`,
-        start_url: `/portfolio`,
         background_color: fullConfig.theme.colors.white,
         theme_color: fullConfig.theme.colors.teal[`500`],
         display: `minimal-ui`,
