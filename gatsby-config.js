@@ -5,6 +5,7 @@ const tailwindConfig = require("./tailwind.config.js");
 const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
+  pathPrefix: "/protfolio",
   siteMetadata: {
     title: `Amit Friedberg's Resume on the Web`,
     description: `Freelancer Full Stack Web Developer`,
