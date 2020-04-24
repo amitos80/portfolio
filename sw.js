@@ -42,11 +42,11 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "6a5b7ea07111ada1ab5d3f8f2d398582"
+    "revision": "abc29800eba66e16f6a5a05ea3baf063"
   },
   {
     "url": "404/index.html",
-    "revision": "f2521fe526c9416e4261a59ee52c3ef9"
+    "revision": "668636d7c3b10bddcc7de6f4b1681f31"
   },
   {
     "url": "95b64a6e-7df4b477ec432349209d.js"
@@ -71,7 +71,7 @@ self.__precacheManifest = [
   },
   {
     "url": "chunk-map.json",
-    "revision": "3ddee5c3d28d5109995f5f4cde9bd8fa"
+    "revision": "af4cdf6729d25954ae3d16014eba32a1"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-18b9bd78e89bbe4752a5.js"
@@ -149,15 +149,15 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "aff406fe7e2ae678f8fbd742755f93f6"
+    "revision": "c85789e1758e3064ab45c1f8218d59b4"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "79030751105fba0881c2df2d7b5a66ca"
+    "revision": "8d63f91a1f18a15356554ecd19b97030"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "09ee42860c3d0ef5e3174e9f3ae5c37a"
+    "revision": "29f76064e1d3c89f481263e363c006d9"
   },
   {
     "url": "page-data/404.html/page-data.json",
@@ -169,7 +169,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "c628f5f075112896faf48f76ba2d912e"
+    "revision": "57ce508091d91a2e90d4e70e657fcb24"
   },
   {
     "url": "page-data/dev-404-page/page-data.json",
@@ -621,7 +621,7 @@ self.__precacheManifest = [
   },
   {
     "url": "webpack.stats.json",
-    "revision": "b2d56502a726ef15e808b4bd8ea8f80a"
+    "revision": "2fca2aacdbc60d0d4f8af1b5574fe0cd"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -709,12 +709,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/protfolio`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-ec5c54057c83de9b60eb.js`))) {
+  if (!resources || !(await caches.match(`/protfolio/app-3bcd42564679afe2e489.js`))) {
     return await fetch(event.request)
   }
 
@@ -727,7 +727,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/protfolio/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
