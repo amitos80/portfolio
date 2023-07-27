@@ -17,6 +17,6 @@
   {
     "language": "TypeScript",
     "text": "Professional level",
-    "translation": "const str:string = 'Hello World' \n console.log(str)"
+    "translation": "const str:string = 'Hello World'"
   }
 ]
