@@ -7,8 +7,9 @@ const fullConfig = resolveConfig(tailwindConfig);
 module.exports = {
     pathPrefix: "/portfolio",
     siteMetadata: {
-        title: `Amit Friedberg's Resume on the Web`,
-        description: `Freelancer Full Stack Web Developer`,
+        title: `Amit Friedberg - Full Stack Web Developer`,
+        //description: `Are you a startup looking for a full stack web developer to help you bring your vision to life? Look no further than [your name]! I have over 10 years of experience in the software industry, and I have a proven track record of success in delivering high-quality web products. I am proficient in all aspects of web development, from front-end to back-end, and I am always up-to-date on the latest technologies. I am also a great communicator and I am passionate about helping startups succeed.`,
+        description: `Welcome to my portfolio website! As a dynamic and innovative full-stack web developer, I am dedicated to providing top-notch web product development services to ambitious startup companies in the software industry. With a passion for crafting cutting-edge digital experiences, I strive to transform ideas into reality through seamless code and intuitive user interfaces. Explore my diverse projects and discover how my technical expertise and creative flair can elevate your business to new heights. Let's collaborate and build the future together!`,
         author: `Amit Friedberg`,
     },
     plugins: [
@@ -17,8 +18,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Amit Friedberg's Resume on the Web`,
-                short_name: `Resume on the Web`,
+                name: `Amit Friedberg - Full Stack Web Developer`,
+                short_name: `Amit Friedberg's Resume`,
                 start_url: `/portfolio`,
                 background_color: fullConfig.theme.colors.white,
                 theme_color: fullConfig.theme.colors.teal[`500`],

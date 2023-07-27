@@ -1,0 +1,10 @@
+# Screaming Frog SEO Spider
+User-agent: Screaming Frog SEO Spider
+Disallow:
+
+# All robots allowed
+User-agent: *
+Disallow:
+
+# Sitemap files
+Sitemap: https://amitos80.github.io/sitemap.xml

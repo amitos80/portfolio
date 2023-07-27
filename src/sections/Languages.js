@@ -37,7 +37,7 @@ const Languages = () => {
             return (
               <div key={node.id}>
                 <h2 className="text-4xl pb-2">{node.text}</h2>
-                <span className="italic">{node.translation}</span>
+                <span className="italic w-1/5">{node.translation}</span>
                 <Typist.Backspace
                   count={node.text.length + node.translation.length}
                   delay={2000}

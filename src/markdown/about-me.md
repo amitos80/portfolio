@@ -2,8 +2,12 @@
 id: "about-me"
 ---
 
-Hey there!
+Hey there! 
+Hi, I'm Amit Friedberg. Welcome to my portfolio website! As a dynamic and innovative full-stack web developer for the past 11 years, I am dedicated to providing top-notch web product development services to ambitious startup companies
+in the software industry. With a passion for crafting cutting-edge digital experiences, I strive to transform ideas into reality through seamless code and intuitive user interfaces. Explore my diverse projects and discover how my technical 
+expertise and creative flair can elevate your business to new heights.
+I'm Skilled in JS, React, Vue, Styled Components, Nodejs, PostgreSQL, TypeScript, Webpack, mondoDb, Software Architecture, Atomic Design Methodology, TailWind/ChakraUI and more with every day.
+Let's collaborate and build the future together!
 
-I'm Amit Friedberg, I've been a developer for the past 9 Years. I've been a full stack web developer in the music, adtech, fintech industries and as a freelancer ([download cv](https://drive.google.com/file/d/1McYuhNhlSOBw24FOuQFRfaM3s4qT-1qD)).
-As a developer I always try to come up with the most simple and elegant solution according to the constraints and requirements.
-I'm Skilled in JS, React, Vue, Styled Components, Nodejs, Webpack, mondoDb, Software Architecture, Atomic Design Methodology.
+
+
