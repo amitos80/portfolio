@@ -25,7 +25,7 @@ const Resume = () => {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-5 md:gap-8 items-center">
         <div className="col-span-1 md:col-span-2">
           <OutboundLink
-            href="https://drive.google.com/file/d/1McYuhNhlSOBw24FOuQFRfaM3s4qT-1qD"
+            href="https://drive.google.com/file/d/1fcfXDKRL-d3jJYDFl6X_RbA0G7BqR_rm/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full h-64 md:h-48 lg:h-64 bg-black relative flex-center cursor-pointer rounded-lg shadow-lg"
@@ -41,16 +41,17 @@ const Resume = () => {
           </OutboundLink>
         </div>
         <div className="col-span-1 md:col-span-3">
-          <h5 className="text-lg lg:text-xl font-semibold">
-
-          </h5>
+          <h5 className="text-lg lg:text-xl font-semibold"></h5>
 
           <Button
             className="mt-8"
             icon={IoIosDocument}
             title="Download Resume"
             onClick={() =>
-              window.open("https://drive.google.com/file/d/1McYuhNhlSOBw24FOuQFRfaM3s4qT-1qD", "_blank")
+              window.open(
+                "https://drive.google.com/file/d/1fcfXDKRL-d3jJYDFl6X_RbA0G7BqR_rm/view?usp=sharing",
+                "_blank",
+              )
             }
           />
         </div>

@@ -20,7 +20,7 @@ const SEO = () => {
   return (
     <Helmet
       htmlAttributes={{ lang: "en" }}
-      defer={false}
+      defer={true}
       title={title}
       meta={[
         {
