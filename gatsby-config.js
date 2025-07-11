@@ -8,9 +8,9 @@ module.exports = {
     pathPrefix: "/portfolio",
     siteMetadata: {
         title: `Amit Friedberg - Full Stack Web Developer`,
-        //description: `Are you a startup looking for a full stack web developer to help you bring your vision to life? Look no further than [your name]! I have over 10 years of experience in the software industry, and I have a proven track record of success in delivering high-quality web products. I am proficient in all aspects of web development, from front-end to back-end, and I am always up-to-date on the latest technologies. I am also a great communicator and I am passionate about helping startups succeed.`,
-        description: `Welcome to my portfolio website! As a dynamic and innovative full-stack web developer, I am dedicated to providing top-notch web product development services to ambitious startup companies in the software industry. With a passion for crafting cutting-edge digital experiences, I strive to transform ideas into reality through seamless code and intuitive user interfaces. Explore my diverse projects and discover how my technical expertise and creative flair can elevate your business to new heights. Let's collaborate and build the future together!`,
+        description: `Experienced Full Stack Web Developer specializing in building modern, responsive, and scalable web applications for startups. Proficient in JavaScript, React, Node.js, and cloud technologies. Let's build something great together.`,
         author: `Amit Friedberg`,
+        image: `https://amitos80.github.io/portfolio/static/photo-a665551193e5da452d16e2b293d4407e.png`,
     },
     plugins: [
         `gatsby-plugin-eslint`,
@@ -52,12 +52,7 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
-    {
-      resolve: `gatsby-source-dev`,
-      options: {
-        username: `amruthpillai`,
-      },
-    },
+    
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -74,12 +69,7 @@ module.exports = {
         path: path.join(__dirname, `src`, `data`),
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `amitfriedberg`,
-      },
-    },
+    
     {
       resolve: `gatsby-plugin-postcss`,
       options: {

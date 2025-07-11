@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import Typist from "react-typist";
 import Heading from "../components/Heading";
 import { FaSignLanguage } from "../components/Icons";
 import styles from "./Languages.module.css";
 
 const Languages = () => {
-  const [typistIndex, setTypistIndex] = useState(0);
   const data = useStaticQuery(graphql`
     {
       allLanguagesJson {
@@ -27,26 +25,16 @@ const Languages = () => {
       <Heading icon={FaSignLanguage} title="Languages" />
 
       <div className="h-48 md:h-40 lg:h-32 wow fadeIn">
-        <Typist
-          key={typistIndex}
-          avgTypingDelay={40}
-          cursor={{ show: false }}
-          onTypingDone={() => setTypistIndex(typistIndex + 1)}
-        >
-          {data.allLanguagesJson.edges.map(({ node }) => {
-            return (
-              <div key={node.id}>
-                <h2 className="text-4xl pb-2">{node.text}</h2>
-                <span className="italic w-3">{node.translation}</span>
-                <Typist.Backspace
-                  count={node.text.length + node.translation.length}
-                  delay={2000}
-                />
-                <Typist.Delay ms={300} />
-              </div>
-            );
-          })}
-        </Typist>
+        {data.allLanguagesJson.edges.length > 0 && (
+          <div>
+            <h2 className="text-4xl pb-2">
+              {data.allLanguagesJson.edges[0].node.text}
+            </h2>
+            <span className="italic w-3">
+              {data.allLanguagesJson.edges[0].node.translation}
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="mt-12 flex flex-wrap">

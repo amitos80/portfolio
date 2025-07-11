@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import GatsbyImage from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React from "react";
 import Button from "../components/Button";
@@ -11,9 +11,7 @@ const Resume = () => {
     {
       file(relativePath: { eq: "resume/cv.png" }) {
         childImageSharp {
-          fluid(maxWidth: 600) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(width: 600, layout: CONSTRAINED)
         }
       }
     }
@@ -32,10 +30,10 @@ const Resume = () => {
           >
             <FaLink className="absolute" color="#FFF" size="5rem" />
             <GatsbyImage
-              loading="lazy"
+              image={data.file.childImageSharp.gatsbyImageData}
+              alt="Resume"
               className="absolute w-full h-64 md:h-48 lg:h-64 object-cover rounded-lg hover:opacity-50 duration-200"
               imgStyle={{ objectPosition: "top" }}
-              {...data.file.childImageSharp}
             />
             <span className="sr-only">Download Resume</span>
           </OutboundLink>

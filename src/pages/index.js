@@ -1,3 +1,4 @@
+import SEO from "../components/SEO";
 import React from "react";
 import Wrapper from "../components/Wrapper";
 import AboutMe from "../sections/AboutMe";
@@ -14,6 +15,7 @@ import styles from "./index.module.css";
 const IndexPage = () => {
   return (
     <Wrapper>
+      <SEO />
       <div className={`container ${styles.layout}`}>
         <Hero />
         <AboutMe />

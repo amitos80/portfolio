@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import GatsbyImage from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Parallax from "parallax-js";
 import React, { useRef, useState, useEffect } from "react";
 import ReactTooltip from "react-tooltip";
@@ -15,9 +15,7 @@ const Hero = () => {
     {
       photo: file(relativePath: { eq: "photo.png" }) {
         childImageSharp {
-          fixed(width: 200, height: 200) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 200, height: 200, layout: FIXED)
         }
       }
     }
@@ -50,7 +48,7 @@ const Hero = () => {
       <div className="w-full grid grid-cols-1 lg:grid-cols-5 row-gap-8 lg:gap-16 justify-center lg:justify-start items-center mt-8 md:mt-12 lg:mt-0">
         <div ref={parallaxRef} className="col-span-2">
           <div style={{ width: '200px' }} className="mx-auto" data-depth="0.4">
-            <GatsbyImage loading="lazy" {...data.photo.childImageSharp} />
+            <GatsbyImage image={data.photo.childImageSharp.gatsbyImageData} />
               <div style={{ width: '138px' }} className="mx-auto h-6 my-6">
                   {showSocial && <Social />}
               </div>

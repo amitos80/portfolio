@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import GatsbyImage from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React from "react";
 import Button from "../components/Button";
@@ -21,9 +21,7 @@ const Projects = () => {
             github
             image {
               childImageSharp {
-                fluid(maxWidth: 400) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(width: 400, layout: CONSTRAINED)
               }
             }
           }
@@ -53,9 +51,9 @@ const Projects = () => {
             >
               <FaLink className="absolute" color="#FFF" size="5rem" />
               <GatsbyImage
-                loading="lazy"
+                image={node.image.childImageSharp.gatsbyImageData}
+                alt={node.title}
                 className="absolute w-full h-full object-cover rounded-lg hover:opacity-50 duration-200"
-                {...node.image.childImageSharp}
               />
               <span className="sr-only">{node.title}</span>
             </OutboundLink>

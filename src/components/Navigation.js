@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import GatsbyImage from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useState, useEffect, useContext } from "react";
 import { animateScroll as scroll, scroller } from "react-scroll";
 import ThemeContext from "../context/ThemeContext";
@@ -14,9 +14,7 @@ const Navigation = () => {
     query {
       icon: file(relativePath: { eq: "icon.png" }) {
         childImageSharp {
-          fixed(width: 32, height: 32) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
+          gatsbyImageData(width: 32, height: 32, layout: FIXED)
         }
       }
     }
@@ -73,9 +71,8 @@ const Navigation = () => {
         data-place="right"
       >
         <GatsbyImage
-          loading="lazy"
+          image={data.icon.childImageSharp.gatsbyImageData}
           className="grayscale"
-          {...data.icon.childImageSharp}
         />
       </div>
       <div className="hidden md:flex flex-col justify-center items-center">
