@@ -1,11 +1,10 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useState, useEffect, useContext } from "react";
-import { animateScroll as scroll, scroller } from "react-scroll";
-import ThemeContext from "../context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 import sections from "../data/sections";
 import { IoIosColorPalette, MdMenu } from "./Icons";
-import styles from "./Navigation.module.css";
+import * as styles from "./Navigation.module.css";
 
 const Navigation = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,34 +26,19 @@ const Navigation = () => {
     }
   }, []);
 
-  const scrollToTop = () =>
-    scroll.scrollToTop({
-      delay: 50,
-      duration: 600,
-      smooth: "easeInOutCubic",
-    });
-
-  const scrollTo = id =>
-    scroller.scrollTo(id, {
-      delay: 50,
-      offset: -50,
-      duration: 600,
-      smooth: "easeInOutCubic",
-    });
-
   const SectionLink = x => {
     const Icon = x.icon;
 
     return (
-      <div
+      <a
         style={{ color: x.color }}
         key={x.id}
         data-tip={x.title}
         data-place="right"
-        onClick={() => scrollTo(x.id)}
+        href={`#${x.id}`}
       >
         <Icon />
-      </div>
+      </a>
     );
   };
 
@@ -64,9 +48,9 @@ const Navigation = () => {
         isMobile ? "fadeInDown" : "fadeInLeft"
       }`}
     >
-      <div
+      <a
         className="flex-center cursor-pointer"
-        onClick={scrollToTop}
+        href="#"
         data-tip="Go to Top"
         data-place="right"
       >
@@ -74,7 +58,7 @@ const Navigation = () => {
           image={data.icon.childImageSharp.gatsbyImageData}
           className="grayscale"
         />
-      </div>
+      </a>
       <div className="hidden md:flex flex-col justify-center items-center">
         <div className={styles.menu}>
           <MdMenu />

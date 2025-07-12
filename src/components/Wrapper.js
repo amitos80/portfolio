@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import React, { useState, useContext, useEffect } from "react";
 import ReactTooltip from "react-tooltip";
-import ThemeContext from "../context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 import Navigation from "./Navigation";
 import SEO from "./SEO";
-import styles from "./Wrapper.module.css";
+import * as styles from "./Wrapper.module.css";
 
 const Wrapper = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);

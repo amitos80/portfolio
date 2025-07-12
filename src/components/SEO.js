@@ -13,6 +13,7 @@ const SEO = () => {
             description
             author
             image
+            keywords
           }
         }
       }
@@ -23,6 +24,7 @@ const SEO = () => {
   const description = site.siteMetadata.description;
   const author = site.siteMetadata.author;
   const image = site.siteMetadata.image;
+  const keywords = site.siteMetadata.keywords;
 
   const schema = {
     "@context": "http://schema.org",
@@ -41,6 +43,10 @@ const SEO = () => {
         {
           name: `description`,
           content: description,
+        },
+        {
+          name: `keywords`,
+          content: keywords,
         },
         {
           property: `og:title`,

@@ -1,58 +1,48 @@
+import React, { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import React from "react";
 
 const defaultState = {
   dark: true,
   toggleDark: () => {},
 };
 
-const ThemeContext = React.createContext(defaultState);
+export const ThemeContext = createContext(defaultState);
 
-const supportsDarkMode = () =>
-  window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+export const ThemeProvider = ({ children }) => {
+  const [dark, setDark] = useState(true);
 
-class ThemeProvider extends React.Component {
-  state = {
-    dark: true,
-  };
-
-  toggleDark = () => {
-    let dark = !this.state.dark;
-    localStorage.setItem("dark", JSON.stringify(dark));
-    this.setState({ dark });
-  };
-
-  componentDidMount() {
-    const dark = JSON.parse(localStorage.getItem("dark"));
-
-    if (dark === false) {
-      this.setState({ dark });
-    } else if (supportsDarkMode()) {
-      this.setState({ dark: true });
+  useEffect(() => {
+    const storedDark = JSON.parse(localStorage.getItem("dark"));
+    if (storedDark !== null) {
+      setDark(storedDark);
+    } else {
+      const supportsDarkMode =
+        window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+      setDark(supportsDarkMode);
     }
-  }
+  }, []);
 
-  render() {
-    const { children } = this.props;
-    const { dark } = this.state;
+  const toggleDark = () => {
+    const newDark = !dark;
+    localStorage.setItem("dark", JSON.stringify(newDark));
+    setDark(newDark);
+  };
 
-    return (
-      <ThemeContext.Provider
-        value={{
-          dark,
-          toggleDark: this.toggleDark,
-        }}
-      >
-        {children}
-      </ThemeContext.Provider>
-    );
-  }
-}
+  return (
+    <ThemeContext.Provider
+      value={{
+        dark,
+        toggleDark,
+      }}
+    >
+      {children}
+    </ThemeContext.Provider>
+  );
+};
 
 ThemeProvider.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-export default ThemeContext;
+export default ThemeProvider;
 
-export { ThemeProvider };

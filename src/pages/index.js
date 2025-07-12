@@ -1,5 +1,6 @@
 import SEO from "../components/SEO";
-import React from "react";
+import React, { useContext } from "react";
+import { graphql } from "gatsby";
 import Wrapper from "../components/Wrapper";
 import AboutMe from "../sections/AboutMe";
 import Education from "../sections/Education";
@@ -10,9 +11,12 @@ import Projects from "../sections/Projects";
 import Resume from "../sections/Resume";
 import Skills from "../sections/Skills";
 import Work from "../sections/Work";
-import styles from "./index.module.css";
+import { ThemeContext } from "../context/ThemeContext";
+import * as styles from "./index.module.css";
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const { dark } = useContext(ThemeContext);
+
   return (
     <Wrapper>
       <SEO />
@@ -22,7 +26,7 @@ const IndexPage = () => {
         <Projects />
         <div className={styles.workEducation}>
           <Work />
-          <Education />
+          <Education data={data} dark={dark} />
         </div>
         <Skills />
         <Resume />
@@ -34,3 +38,23 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    allEducationJson {
+      edges {
+        node {
+          id
+          title
+          subtitle
+          period
+          icon {
+            childImageSharp {
+              gatsbyImageData(width: 32, height: 32, layout: FIXED)
+            }
+          }
+        }
+      }
+    }
+  }
+`;

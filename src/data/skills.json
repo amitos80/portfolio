@@ -2,22 +2,42 @@
   {
     "icon": "../images/skills/web.png",
     "name": "Web Design & Development",
-    "tech": "HTML/CSS/Javascript"
+    "tech": "HTML/CSS/Javascript/Typescript"
   },
   {
     "icon": "../images/skills/angular.png",
     "name": "Frontend Javascript Frameworks",
-    "tech": "AngularJS/Angular 9/React/Vue.js/Svelte"
+    "tech": "React/Vue.js/Svelte/Solid.js/Vite"
   },
   {
     "icon": "../images/skills/nodejs.png",
     "name": "Backend Javascript Frameworks",
-    "tech": "Node.js/Express.js/Mongoose"
+    "tech": "Node.js/Express.js/GraphQL"
   },
   {
     "icon": "../images/skills/database.png",
     "name": "Database Management System",
-    "tech": "MySQL/Postgres/MongoDB"
+    "tech": "MySQL/Postgres/MongoDB/DynamoDB/Firebase"
+  },
+  {
+    "icon": "../images/skills/tensorflow.png",
+    "name": "AI/ML",
+    "tech": "TensorFlow/PyTorch/scikit-learn"
+  },
+  {
+    "icon": "../images/skills/sketch.png",
+    "name": "UI/UX Design",
+    "tech": "Figma/Sketch/Adobe XD"
+  },
+  {
+    "icon": "../images/skills/database.png",
+    "name": "Cloud and DevOps",
+    "tech": "AWS/Docker/Kubernetes/GCP/Azure"
+  },
+  {
+    "icon": "../images/skills/seo.png",
+    "name": "Cybersecurity",
+    "tech": "OWASP/Penetration Testing/Security Audits"
   },
   {
     "icon": "../images/skills/android.png",

@@ -4,7 +4,7 @@ import React, { useContext, useState } from "react";
 import ReactTooltip from "react-tooltip";
 import Heading from "../components/Heading";
 import { MdLocationOn, MdMoreHoriz, MdWork } from "../components/Icons";
-import ThemeContext from "../context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Work = () => {
   const { dark } = useContext(ThemeContext);

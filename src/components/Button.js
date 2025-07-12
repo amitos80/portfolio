@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import styles from "./Button.module.css";
-import ThemeContext from "../context/ThemeContext";
+import * as styles from "./Button.module.css";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Button = ({ type, className, icon, title, onClick, disabled }) => {
   const { dark } = useContext(ThemeContext);

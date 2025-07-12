@@ -1,16 +1,14 @@
 const path = require(`path`);
-const resolveConfig = require("tailwindcss/resolveConfig");
 const tailwindConfig = require("./tailwind.config.js");
-
-const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
     pathPrefix: "/portfolio",
     siteMetadata: {
-        title: `Amit Friedberg - Full Stack Web Developer`,
-        description: `Experienced Full Stack Web Developer specializing in building modern, responsive, and scalable web applications for startups. Proficient in JavaScript, React, Node.js, and cloud technologies. Let's build something great together.`,
+        title: `Amit Friedberg - Senior Full-Stack Web Developer`,
+        description: `Senior Full-Stack Web Developer with over a decade of experience in building modern, responsive, and scalable web applications. Proficient in JavaScript, React, Node.js, Python, AI/ML, UI/UX Design, Cloud, DevOps, and cybersecurity. Let's build something great together.`,
         author: `Amit Friedberg`,
         image: `https://amitos80.github.io/portfolio/static/photo-a665551193e5da452d16e2b293d4407e.png`,
+        keywords: `Full-Stack, Web Developer, JavaScript, React, Node.js, Python, AI, ML, UI, UX, Cloud, DevOps, Cybersecurity, Portfolio, Amit Friedberg`,
     },
     plugins: [
         `gatsby-plugin-eslint`,
@@ -21,8 +19,8 @@ module.exports = {
                 name: `Amit Friedberg - Full Stack Web Developer`,
                 short_name: `Amit Friedberg's Resume`,
                 start_url: `/portfolio`,
-                background_color: fullConfig.theme.colors.white,
-                theme_color: fullConfig.theme.colors.teal[`500`],
+                background_color: `#ffffff`,
+                theme_color: `#4fd1c5`,
                 display: `minimal-ui`,
                 icon: `src/images/icon.png`,
                 cache_busting_mode: `none`,
@@ -74,11 +72,8 @@ module.exports = {
       resolve: `gatsby-plugin-postcss`,
       options: {
         postCssPlugins: [
-          require(`tailwindcss`)(tailwindConfig),
+          require(`@tailwindcss/postcss`)(tailwindConfig),
           require(`autoprefixer`),
-          ...(process.env.NODE_ENV === `production`
-            ? [require(`cssnano`)]
-            : []),
         ],
       },
     },

@@ -1,35 +1,12 @@
-import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import React, { useContext } from "react";
+import React from "react";
 import Heading from "../components/Heading";
 import { MdSchool } from "../components/Icons";
-import ThemeContext from "../context/ThemeContext";
 
-const Education = () => {
-  const { dark } = useContext(ThemeContext);
-  const data = useStaticQuery(graphql`
-    {
-      allEducationJson {
-        edges {
-          node {
-            id
-            title
-            subtitle
-            period
-            icon {
-              childImageSharp {
-                gatsbyImageData(width: 32, height: 32, layout: FIXED)
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
+const Education = ({ data, dark }) => {
   return (
     <section id="education">
-      <Heading icon={MdSchool} title="Education" />
+      
 
       <div className="flex">
         <div className="w-1 bg-gray-500 rounded-full md:ml-6 opacity-25" />
@@ -38,10 +15,7 @@ const Education = () => {
             return (
               <div
                 key={node.id}
-                className="py-4 flex wow fadeInDown"
-                style={{
-                  animationDuration: `${index * 200 + 500}ms`,
-                }}
+                className="py-4 flex"
               >
                 <div
                   className={`relative mt-3 w-3 h-3 rounded-full shadow-lg opacity-75 z-2 ${
